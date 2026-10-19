@@ -1,31 +1,92 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# Estado público de CreaVideosConIA — https://status.creavideosconia.com
+# Upptime (open source, MIT): GitHub Actions revisa cada componente cada 5 minutos desde fuera de nuestro servidor;
+# cada caída abre un incidente (issue) asignado y queda en el historial. Las URLs /status/<componente> de la API
+# responden 200 si funciona y 503 si no (latidos de los workers, cola atascada, pasarela de pagos).
+owner: diego1996
+repo: creavideosconia-status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  - name: Sitio web
+    url: https://creavideosconia.com
+  - name: Studio (app)
+    url: https://app.creavideosconia.com/login
+  - name: API
+    url: https://api.creavideosconia.com/status/api
+  - name: Producción de vídeos
+    url: https://api.creavideosconia.com/status/generation
+  - name: Publicación en redes y correos
+    url: https://api.creavideosconia.com/status/publishing
+  - name: Pagos
+    url: https://api.creavideosconia.com/status/payments
+  - name: Conexión con agentes de IA (MCP)
+    url: https://mcp.creavideosconia.com/.well-known/oauth-protected-resource/mcp
+
+assignees:
+  - diego1996
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.creavideosconia.com
+  logoUrl: https://creavideosconia.com/icon.png
+  favicon: https://creavideosconia.com/icon.png
+  name: CreaVideosConIA · Estado
+  introTitle: "Estado de **CreaVideosConIA**"
+  introMessage: Disponibilidad en tiempo real de cada parte de la plataforma, medida cada 5 minutos desde fuera de nuestros servidores. Si algo falla lo verás aquí con su historial; tus vídeos y créditos están a salvo.
+  theme: night
   navbar:
-    - title: Status
+    - title: Estado
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+    - title: Ir a CreaVideosConIA
+      href: https://creavideosconia.com
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+i18n:
+  activeIncidents: Incidentes activos
+  allSystemsOperational: Todos los sistemas funcionan
+  incidentReport: "Incidente #$NUMBER →"
+  activeIncidentSummary: Abierto el $DATE con $POSTS actualizaciones
+  incidentTitle: Incidente $NUMBER
+  incidentDetails: Detalles del incidente
+  incidentFixed: Resuelto
+  incidentOngoing: En curso
+  incidentOpenedAt: Abierto
+  incidentClosedAt: Cerrado
+  incidentSubscribe: Suscribirme a las actualizaciones
+  incidentViewOnGitHub: Ver en GitHub
+  incidentCommentSummary: Publicado el $DATE por $AUTHOR
+  incidentBack: ← Volver a todos los incidentes
+  pastIncidents: Incidentes anteriores
+  pastIncidentsResolved: Resuelto en $MINUTES minutos con $POSTS actualizaciones
+  liveStatus: Estado actual
+  overallUptime: "Disponibilidad total: $UPTIME"
+  overallUptimeTitle: Disponibilidad total
+  averageResponseTime: "Tiempo de respuesta promedio: $TIME ms"
+  averageResponseTimeTitle: Tiempo de respuesta promedio
+  sevelDayResponseTime: Tiempo de respuesta en 7 días
+  responseTimeMs: Tiempo de respuesta (ms)
+  up: Funciona
+  down: Caído
+  degraded: Lento
+  ms: ms
+  loading: Cargando
+  navGitHub: GitHub
+  footer: Medido con Upptime, código abierto.
+  rateLimitExceededTitle: Límite de consultas alcanzado
+  rateLimitExceededIntro: Hiciste muchas consultas seguidas; espera un momento y recarga.
+  rateLimitExceededWhatDoesErrorMean: ¿Qué significa?
+  rateLimitExceededErrorMeaning: GitHub limita las consultas por hora desde una misma conexión.
+  rateLimitExceededErrorHowCanFix: ¿Cómo lo arreglo?
+  rateLimitExceededErrorFix: Espera unos minutos y recarga la página.
+  rateLimitExceededGeneratePAT: ""
+  errorTitle: Ocurrió un error
+  errorIntro: No pudimos cargar el estado.
+  errorText: Recarga la página en unos minutos.
+  errorHome: Volver al inicio
+  pastScheduledMaintenance: Mantenimientos anteriores
+  scheduledMaintenance: Mantenimiento programado
+  scheduledMaintenanceSummaryStarted: Empezó el $DATE y dura $DURATION minutos
+  scheduledMaintenanceSummaryStarts: Empieza el $DATE y dura $DURATION minutos
+  startedAt: Empezó
+  startsAt: Empieza
+  duration: Duración
+  durationMin: $DURATION minutos
+  incidentCompleted: Completado
+  incidentScheduled: Programado
